@@ -14,38 +14,25 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <!-- Font Awesome for icons -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap"
       rel="stylesheet"
     />
     <style>
-      /* Body background styling */
       body {
-        position: relative; /* Needed to position the overlay */
         margin: 0;
         padding: 0;
-        height: 100vh; /* Ensure body fills the entire screen */
+        overflow-x: hidden;
       }
 
-      /* Background image with full screen */
-      body::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
+      .header-section {
+        position: relative;
+        min-height: 100vh;
         background: url("/images/sophiacollege.jpg") no-repeat center center;
-        background-size: cover; /* Ensure the image covers the entire body */
-        background-position: center center; /* Center the image */
-        z-index: -1; /* Ensure the image is behind content */
+        background-size: cover;
       }
 
-      /* Overlay gradient (black to transparent) */
-      body::after {
+      .header-section::before {
         content: "";
         position: absolute;
         top: 0;
@@ -54,26 +41,45 @@
         bottom: 0;
         background: linear-gradient(
           to bottom,
-          rgba(0, 0, 0, 1) 0%,
-          rgba(0, 0, 0, 0.8) 50%,
-          rgba(0, 0, 0, 0.5) 75%,
-          rgba(0, 0, 0, 0.4) 100%
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0.4)
         );
-        z-index: -1; /* Ensures it's above the background image but below the content */
+        z-index: 0;
       }
 
-      /* Navbar styling */
-      .navbar {
+      .overlay-text {
+        font-family: "DM Serif Text", serif;
         position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: white;
+        text-align: center;
+        z-index: 1;
+        font-weight: bold;
+      }
+
+      .navbar {
+        position: fixed;
         top: 0;
         width: 100%;
         z-index: 10;
         padding: 1rem;
-        background: transparent; /* Make the navbar transparent */
+        transition: background-color 0.3s ease;
+        background: transparent;
+      }
+
+      .navbar.opaque {
+        background-color: rgba(0, 0, 0, 0.8);
       }
 
       .navbar-brand img {
-        height: 170px; /* Adjust the logo size as needed */
+        height: 150px;
+        transition: height 0.1s ease;
+      }
+
+      .navbar.small-logo .navbar-brand img {
+        height: 100px;
       }
 
       .navbar-nav {
@@ -85,57 +91,130 @@
         color: white;
         font-weight: 200;
       }
+
       .dm-serif-text-regular {
         font-family: "DM Serif Text", serif;
         font-size: 1.2rem;
         font-style: normal;
       }
-      /* Adjust the login icon margin */
-      .navbar-nav .nav-item:last-child {
-        margin-right: 0; /* Remove right margin for last item */
-      }
 
       .navbar-nav .login-item {
-        margin-left: 80px; /* Bring the login icon closer to menu items */
+        margin-left: 80px;
+      }
+
+      .content-section {
+        padding: 4rem 2rem;
+        background: #f8f9fa;
       }
     </style>
   </head>
   <body>
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <!-- First Navbar (Large screens) -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
       <div class="container-fluid">
-        <!-- Left Menu Items -->
         <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
           <a class="nav-link mx-3" href="#">Home</a>
           <a class="nav-link mx-3" href="#">Academics</a>
           <a class="nav-link mx-3" href="#">Outreach Programs</a>
         </div>
 
-        <!-- Center Logo -->
         <a class="navbar-brand mx-auto" href="#">
           <img src="/images/logo-white.png" alt="Logo" />
-          <!-- Replace with your logo path -->
         </a>
 
-        <!-- Right Menu Items and Login Icon -->
         <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
           <a class="nav-link mx-3" href="#">Student Life</a>
           <a class="nav-link mx-3" href="#">I-Technothon</a>
           <a class="nav-link mx-3" href="#">Career</a>
-
-          <!-- Login Icon -->
           <a class="nav-link login-item" href="#" title="Login">
             <i class="fas fa-user"></i>
-            <!-- Font Awesome User Icon -->
           </a>
         </div>
       </div>
     </nav>
+
+    <!-- Second Navbar (Small screens ) -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-lg-none">
+      <div class="container-fluid">
+        <!-- Left Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="/images/logo-white.png" alt="Logo" />
+        </a>
+
+        <!-- Navbar Items -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <div class="navbar-nav dm-serif-text-regular">
+            <a class="nav-link" href="#">Home</a>
+            <a class="nav-link" href="#">Academics</a>
+            <a class="nav-link" href="#">Outreach Programs</a>
+            <a class="nav-link" href="#">Student Life</a>
+            <a class="nav-link" href="#">I-Technothon</a>
+            <a class="nav-link" href="#">Career</a>
+            <a class="nav-link" href="#" title="Login">
+              Login <i class="fas fa-user ms-1"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="header-section">
+      <div class="overlay-text">
+        <h1>Department of BSc IT</h1>
+        <h3>Sophia College for women (Empowered Autonomous)</h3>
+      </div>
+    </div>
+
+    <section class="content-section">
+      <h2>Welcome to the BSc IT Department</h2>
+      <p>This section appears below the image header.</p>
+    </section>
+    <section class="content-section">
+      <h2>Welcome to the BSc IT Department</h2>
+      <p>This section appears below the image header.</p>
+    </section>
+    <section class="content-section">
+      <h2>Welcome to the BSc IT Department</h2>
+      <p>This section appears below the image header.</p>
+    </section>
+    <section class="content-section">
+      <h2>Welcome to the BSc IT Department</h2>
+      <p>This section appears below the image header.</p>
+    </section>
+    <section class="content-section">
+      <h2>Welcome to the BSc IT Department</h2>
+      <p>This section appears below the image header.</p>
+    </section>
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
       crossorigin="anonymous"
     ></script>
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbars = document.querySelectorAll(".navbar");
+        navbars.forEach((navbar) => {
+          if (window.scrollY > 100) {
+            navbar.classList.add("opaque");
+            navbar.classList.add("small-logo");
+          } else {
+            navbar.classList.remove("opaque");
+            navbar.classList.remove("small-logo");
+          }
+        });
+      });
+    </script>
   </body>
 </html>
