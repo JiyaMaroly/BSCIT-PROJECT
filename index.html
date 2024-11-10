@@ -70,7 +70,7 @@
       }
 
       .navbar.opaque {
-        background-color: rgba(0, 0, 0, 0.8);
+        background-color: rgba(0, 0, 0, 0.85);
       }
 
       .navbar-brand img {
@@ -213,6 +213,51 @@
         padding: 4rem 2rem;
         background: #f8f9fa;
       }
+
+      .footer {
+        background-color: #333;
+        color: #f8f9fa;
+        padding: 2rem 0;
+        font-family: "DM Serif Text", serif;
+      }
+
+      .left{
+        padding-top: 3rem;
+      }
+
+      .footer-logo {
+        max-width: 200px;
+      }
+
+      .footer a {
+        color: #efff10;
+        text-decoration: none;
+      }
+
+      .footer a:hover {
+        color: #ffffff;
+      }
+
+      .map-container {
+        margin-top: 0.5rem;
+        width: 200px;
+      }
+      .social-icons {
+        align-items: center;
+        display: flex;
+        gap: 2rem;
+        margin-top: 0.5rem;
+      }
+
+      .social-icon i {
+        font-size: 1.5rem;
+        color: #fff;
+        transition: color 0.3s ease;
+      }
+
+      .social-icon:hover i {
+        color: #efff10; /* Highlight color */
+      }
     </style>
   </head>
   <body>
@@ -352,6 +397,56 @@
       <h2>Welcome to the BSc IT Department</h2>
       <p>This section appears below the image header.</p>
     </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <!-- Left Side: Logo and Contact Info -->
+          <div class="col-md-6 text-center text-md-start left">
+            <img
+              src="/images/logo-white.png"
+              alt="Logo"
+              class="footer-logo mb-2"
+            /><br>
+            <h3>Contact Us</h3>
+            <p>
+              Email:
+              <a href="mailto:bscit@sophiacollege.edu.in">bscit@sophiacollege.edu.in</a>
+            </p><br>
+            
+            
+            <div class="social-icons">
+              <a href="https://www.instagram.com/sophiacollegebscit/" class="social-icon"
+                ><i class="fab fa-instagram"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/sophia-college-bsc-it-alumni-122702324" class="social-icon"
+                ><i class="fab fa-linkedin"></i
+              ></a>
+              <a href="https://www.facebook.com/profile.php?id=100084062912057" class="social-icon"
+                ><i class="fab fa-facebook"></i
+              ></a>
+            </div>
+          </div>
+
+          <!-- Right Side: Location and Google Map -->
+          <div class="col-md-6 text-center text-md-start right">
+            <h3>Our Location</h3>
+            <p>Sophia College for Women(Empowered Autonomous), <br> Bhulabhai Desai Road, <br> Mumbai 400 026.</p>
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3773.130732974964!2d72.80611891761201!3d18.96983291302242!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7ce7687e56e17%3A0x3a08ff3b9150ec07!2sSOPHIA%20COLLEGE%2C%20Cumballa%20Hill%2C%20Mumbai%2C%20Maharashtra%20400026%2C%20India!5e0!3m2!1sen!2sus!4v1731224607020!5m2!1sen!2sus"
+                width="500"
+                height="350"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script>
       window.addEventListener("scroll", function () {
