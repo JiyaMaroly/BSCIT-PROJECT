@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+      }
+
+      .header-section {
+        position: relative;
+        min-height: 100vh;
+        background: url("./images/sophiacollege.jpg") no-repeat center center;
+        background-size: cover;
+      }
+
+      .header-section::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 1),
+          rgba(0, 0, 0, 0.4)
+        );
+        z-index: 0;
+      }
+
+      .overlay-text {
+        font-family: "DM Serif Text", serif;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        color: white;
+        text-align: left;
+        z-index: 1;
+        font-weight: bold;
+      }
+
+      .navbar {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+        padding: 1rem;
+        transition: background-color 0.3s ease;
+        background: transparent;
+      }
+
+      .navbar.opaque {
+        background-color: rgba(0, 0, 0, 0.85);
+      }
+
+      .navbar-brand img {
+        height: 150px;
+        transition: height 0.1s ease;
+      }
+
+      .navbar.small-logo .navbar-brand img {
+        height: 100px;
+      }
+
+      .navbar-nav {
+        flex: 1.5;
+        justify-content: center;
+      }
+
+      .navbar-dark .nav-link {
+        color: white;
+        font-weight: 200;
+      }
+
+      .dm-serif-text-regular {
+        font-family: "DM Serif Text", serif;
+        font-size: 1.2rem;
+        font-style: normal;
+      }
+
+      .navbar-nav .login-item {
+        margin-left: 80px;
+      }
+
+      /* Add arrow symbol next to dropdown menu items */
+      .navbar .navbar-nav .dropdown-toggle::after {
+        font-family: "" DM Serif Text ", serif;";
+        padding-left: 5px; /* Space between text and arrow */
+      }
+      .nav-item.dropdown:hover .dropdown-menu {
+        display: block;
+        opacity: 1;
+        visibility: visible;
+        transition: all 0.3s ease;
+      }
+
+      .dropdown-menu {
+        display: none;
+        opacity: 0;
+        visibility: hidden;
+        background-color: rgba(
+          0,
+          0,
+          0,
+          0.5
+        ); /* Black background with opacity */
+        border-radius: 5px; /* Optional: Adds rounded corners */
+      }
+
+      /* Dropdown items */
+      .dropdown-menu .dropdown-item {
+        color: white; /* White text */
+        padding: 10px 15px; /* Increase padding for individual items */
+        transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+      }
+
+      /* Hover effect for dropdown items */
+      .dropdown-menu .dropdown-item:hover {
+        background-color: rgba(255, 255, 255, 0.1); /* Light hover effect */
+      }
+
+      /* Sidebar styling */
+      .sidebar {
+        position: fixed;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background-color: #000000;
+        padding-top: 60px;
+        transition: 0.3s;
+        z-index: 11;
+      }
+      .sidebar a {
+        padding: 10px 15px;
+        font-family: "DM Serif Text", serif;
+        font-size: 1rem;
+        text-decoration: none;
+        color: #f8f9fa;
+        display: block;
+        transition: 0.3s;
+      }
+      .sidebar a:hover {
+        color: #efff10;
+      }
+      .sidebar .closebtn {
+        position: absolute;
+        top: 10px;
+        right: 25px;
+        font-size: 1.5rem;
+      }
+      .dropdown-btn {
+        padding: 10px 15px;
+        font-family: "DM Serif Text", serif;
+        font-size: 1rem;
+        background-color: #000000;
+        color: white;
+        border: none;
+        text-align: left;
+        cursor: pointer;
+        width: 100%;
+        transition: 0.3s;
+      }
+
+      .dropdown-btn:hover {
+        color: #efff10;
+      }
+
+      /* Submenu styling */
+      .submenu {
+        display: none;
+        background-color: #1f1f1f;
+      }
+
+      .submenu a {
+        font-family: "DM Serif Text", serif;
+        font-size: 1rem;
+        color: #efff10;
+      }
+
+      .submenu a:hover {
+        background-color: #575757;
+        color: white;
+      }
+
+      /* Active dropdown button style */
+      .dropdown-btn.active {
+        background-color: #efff10;
+        color: #000000;
+      }
+
+      
+      .header-section {
+    position: relative;
+    min-height: 100vh;
+    background: url("./images/sophiacollege.jpg") no-repeat center center;
+    background-size: cover;
+  }
+
+  .header-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.4)
+    );
+    z-index: 0;
+  }
+
+  .login-container {
+    color: white;
+    
+    font-family: "DM Serif Text", serif;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30%;
+    background-color: rgba(0, 0, 0, 0.750);
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .login-form {
+    flex: 1;
+  }
+
+  .form-label {
+    font-family: "DM Serif Text", serif;
+    font-size: 1rem;
+    color: white;
+  }
+
+  .btn-primary {
+    background-color: rgb(45, 45, 45);
+    border-color: #000;
+  }
+
+  .btn-primary:hover {
+    background-color: #444;
+    border-color: #444;
+  }
+
+    </style>
+  </head>
+  <body>
+    <!-- First Navbar (Large screens) -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
+      <div class="container-fluid">
+        <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
+          <a class="nav-link mx-3" href="index.html">Home</a>
+
+          <!-- Dropdown for Academics -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle mx-3"
+              href="#"
+              id="academicsDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Academics
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+              <li>
+                <a class="dropdown-item" href="#">Syllabi</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Study Material</a>
+              </li>
+            </ul>
+          </li>
+          <a class="nav-link mx-3" href="#">Outreach Programs</a>
+        </div>
+
+        <a class="navbar-brand mx-auto" href="index.html">
+          <img src="./images/logo-white.png" alt="Logo" />
+        </a>
+
+        <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
+          <!-- Dropdown for Student Life -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle mx-3"
+              href="#"
+              id="studentLifeDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Student Life
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="studentLifeDropdown">
+              <li><a class="dropdown-item" href="#">Industrial Visits</a></li>
+              <li><a class="dropdown-item" href="#">Activities</a></li>
+              <li><a class="dropdown-item" href="#">Alumni</a></li>
+            </ul>
+          </li>
+          <a class="nav-link mx-3" href="#">I-Technothon</a>
+          <a class="nav-link mx-3" href="#">Career</a>
+          <a class="nav-link login-item" href="#" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Second Navbar (Small screens) -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-lg-none">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./images/logo-white.png" alt="Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" onclick="openSidebar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >&times;</a
+      >
+      <a href="#">Home</a>
+
+      <!-- Menu Item with Submenu -->
+      <div class="menu-item">
+        <button class="dropdown-btn">
+          Academics <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Syllabi</a>
+          <a href="#">Study Material</a>
+        </div>
+      </div>
+      <a href="#">Outreach Programs</a>
+
+      <!-- Another Menu Item with Submenu -->
+      <div class="menu-item">
+        <button class="dropdown-btn">
+          Student Life<i class="fas fa-caret-down"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Industrial Visits</a>
+          <a href="#">Activities</a>
+          <a href="#">Alumni</a>
+        </div>
+      </div>
+
+      <a href="#">I-Technothon</a>
+      <a href="#">Login <i class="fas fa-user"></i></a>
+    </div>
+
+   <!-- Login Section -->
+<div class="header-section">
+    <div class="login-container">
+      <div class="login-form">
+        <h2 class="text-center mb-4">Login</h2> <!-- Login text above the form -->
+        <form>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email" />
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password" placeholder="Enter your password" />
+          </div>
+          <button type="submit" class="btn btn-primary">Login</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+    
+
+    <script>
+      window.addEventListener("scroll", function () {
+        const navbars = document.querySelectorAll(".navbar");
+        navbars.forEach((navbar) => {
+          if (window.scrollY > 100) {
+            navbar.classList.add("opaque");
+            navbar.classList.add("small-logo");
+          } else {
+            navbar.classList.remove("opaque");
+            navbar.classList.remove("small-logo");
+          }
+        });
+      });
+    </script>
+
+    <!-- Sidebar toggle script -->
+    <script>
+      function openSidebar() {
+        document.getElementById("sidebar").style.right = "0";
+      }
+
+      function closeSidebar() {
+        document.getElementById("sidebar").style.right = "-250px";
+      }
+
+      // Handle the dropdown functionality for submenus
+      var dropdownBtns = document.getElementsByClassName("dropdown-btn");
+      for (var i = 0; i < dropdownBtns.length; i++) {
+        dropdownBtns[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var submenu = this.nextElementSibling;
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+          } else {
+            submenu.style.display = "block";
+          }
+        });
+      }
+    </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
