@@ -19,9 +19,9 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/main.css" />
-    <link rel="stylesheet" href="/navbar-sidebar.css" />
-    <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./navbar-sidebar.css" />
+    <link rel="stylesheet" href="./footer.css" />
   </head>
   <body>
     <!-- First Navbar (Large screens) -->
@@ -79,7 +79,7 @@
       </li>
       <a class="nav-link mx-3" href="#">I-Technothon</a>
       <a class="nav-link mx-3" href="#">Career</a>
-      <a class="nav-link login-item" href="login.html" title="Login">
+      <a class="nav-link login-item" href="./login.html" title="Login">
         <i class="fas fa-user"></i>
       </a>
     </div>
@@ -130,7 +130,7 @@
   </div>
 
   <a href="#">I-Technothon</a>
-  <a href="login.html">Login <i class="fas fa-user"></i></a>
+  <a href="./login.html">Login <i class="fas fa-user"></i></a>
 </div>
 
 <script>
@@ -152,7 +152,7 @@
     <footer id="footer"></footer>
 
     <script>
-      fetch("/footer.html")
+      fetch("./footer.html")
         .then((response) => response.text())
         .then((html) => {
           document.getElementById("footer").innerHTML = html;
