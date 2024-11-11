@@ -19,124 +19,119 @@
       rel="stylesheet"
     />
 
-    <link rel="stylesheet" href="/main.css" />
-    <link rel="stylesheet" href="/navbar-sidebar.css" />
-    <link rel="stylesheet" href="/footer.css" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="./navbar-sidebar.css" />
+    <link rel="stylesheet" href="./footer.css" />
   </head>
   <body>
     <!-- First Navbar (Large screens) -->
-<nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
-  <div class="container-fluid">
-    <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
-      <a class="nav-link mx-3" href="index.html">Home</a>
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
+      <div class="container-fluid">
+        <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
+          <a class="nav-link mx-3" href="index.html">Home</a>
 
-      <!-- Dropdown for Academics -->
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle mx-3"
-          href="#"
-          id="academicsDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Academics
-        </a>
-        <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
-          <li>
-            <a class="dropdown-item" href="#">Syllabi</a>
+          <!-- Dropdown for Academics -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle mx-3"
+              href="#"
+              id="academicsDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Academics
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+              <li>
+                <a class="dropdown-item" href="#">Syllabi</a>
+              </li>
+              <li>
+                <a class="dropdown-item" href="#">Study Material</a>
+              </li>
+            </ul>
           </li>
-          <li>
-            <a class="dropdown-item" href="#">Study Material</a>
-          </li>
-        </ul>
-      </li>
-      <a class="nav-link mx-3" href="#">Outreach Programs</a>
-    </div>
+          <a class="nav-link mx-3" href="#">Outreach Programs</a>
+        </div>
 
-    <a class="navbar-brand mx-auto" href="index.html">
-      <img src="./images/logo-white.png" alt="Logo" />
-    </a>
-
-    <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
-      <!-- Dropdown for Student Life -->
-      <li class="nav-item dropdown">
-        <a
-          class="nav-link dropdown-toggle mx-3"
-          href="#"
-          id="studentLifeDropdown"
-          role="button"
-          data-bs-toggle="dropdown"
-          aria-expanded="false"
-        >
-          Student Life
+        <a class="navbar-brand mx-auto" href="index.html">
+          <img src="./images/logo-white.png" alt="Logo" />
         </a>
-        <ul class="dropdown-menu" aria-labelledby="studentLifeDropdown">
-          <li><a class="dropdown-item" href="#">Industrial Visits</a></li>
-          <li><a class="dropdown-item" href="#">Activities</a></li>
-          <li><a class="dropdown-item" href="#">Alumni</a></li>
-        </ul>
-      </li>
-      <a class="nav-link mx-3" href="#">I-Technothon</a>
-      <a class="nav-link mx-3" href="#">Career</a>
-      <a class="nav-link login-item" href="login.html" title="Login">
-        <i class="fas fa-user"></i>
-      </a>
+
+        <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
+          <!-- Dropdown for Student Life -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle mx-3"
+              href="#"
+              id="studentLifeDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Student Life
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="studentLifeDropdown">
+              <li><a class="dropdown-item" href="#">Industrial Visits</a></li>
+              <li><a class="dropdown-item" href="#">Activities</a></li>
+              <li><a class="dropdown-item" href="#">Alumni</a></li>
+            </ul>
+          </li>
+          <a class="nav-link mx-3" href="#">I-Technothon</a>
+          <a class="nav-link mx-3" href="#">Career</a>
+          <a class="nav-link login-item" href="./login.html" title="Login">
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Second Navbar (Small screens) -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-lg-none">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./images/logo-white.png" alt="Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" onclick="openSidebar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >&times;</a
+      >
+      <a href="#">Home</a>
+
+      <!-- Menu Item with Submenu -->
+      <div class="menu-item">
+        <button class="dropdown-btn">
+          Academics <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Syllabi</a>
+          <a href="#">Study Material</a>
+        </div>
+      </div>
+      <a href="#">Outreach Programs</a>
+
+      <!-- Another Menu Item with Submenu -->
+      <div class="menu-item">
+        <button class="dropdown-btn">
+          Student Life<i class="fas fa-caret-down"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Industrial Visits</a>
+          <a href="#">Activities</a>
+          <a href="#">Alumni</a>
+        </div>
+      </div>
+
+      <a href="#">I-Technothon</a>
+      <a href="./login.html">Login <i class="fas fa-user"></i></a>
     </div>
-  </div>
-</nav>
-
-<!-- Second Navbar (Small screens) -->
-<nav class="navbar navbar-expand-lg navbar-dark d-lg-none">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">
-      <img src="./images/logo-white.png" alt="Logo" />
-    </a>
-    <button class="navbar-toggler" type="button" onclick="openSidebar()">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-  </div>
-</nav>
-
-<!-- Sidebar -->
-<div id="sidebar" class="sidebar">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
-    >&times;</a
-  >
-  <a href="#">Home</a>
-
-  <!-- Menu Item with Submenu -->
-  <div class="menu-item">
-    <button class="dropdown-btn">
-      Academics <i class="fas fa-caret-down"></i>
-    </button>
-    <div class="submenu">
-      <a href="#">Syllabi</a>
-      <a href="#">Study Material</a>
-    </div>
-  </div>
-  <a href="#">Outreach Programs</a>
-
-  <!-- Another Menu Item with Submenu -->
-  <div class="menu-item">
-    <button class="dropdown-btn">
-      Student Life<i class="fas fa-caret-down"></i>
-    </button>
-    <div class="submenu">
-      <a href="#">Industrial Visits</a>
-      <a href="#">Activities</a>
-      <a href="#">Alumni</a>
-    </div>
-  </div>
-
-  <a href="#">I-Technothon</a>
-  <a href="login.html">Login <i class="fas fa-user"></i></a>
-</div>
-
-<script>
-
-</script>
-
 
     <div class="header-section">
       <div class="overlay-text">
@@ -145,57 +140,250 @@
       </div>
     </div>
 
-    <section class="content-section">
-      <h2>Welcome to the BSc IT Department</h2>
-      <p>This section appears below the image header.</p>
+    <div class="notice-container">
+      <h2 class="title">Notices</h2>
+      <ul class="notice-list">
+        <li>College reopening on 15th November.</li>
+        <li>Annual Sports Day scheduled for 20th December.</li>
+        <li>Exam forms submission deadline is 10th November.</li>
+        <li>Workshop on AI and Data Science on 5th December.</li>
+      </ul>
+    </div>
+
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <!-- Left Side: About Us Title -->
+          <div class="col-md-12">
+            <h2 class="title">About The Subject</h2>
+            <p class="about-description">
+              Information Technology is a rapidly expanding and exceptionally
+              diverse industry. Information Technology or IT mainly deals with
+              computer applications. All our work-related applications are now
+              completely automated, IT professionals are people involved in
+              essential management of sensitive data, computer networking and
+              software-engineering. It covers a broad spectrum of hardware and
+              software solutions that enable organizations to gather, organize,
+              and analyze data that helps them achieve their goals.
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <!-- Left Side: About Us Title -->
+          <div class="col-md-12">
+            <h2 class="title">About The Department</h2>
+            <p class="about-description">
+              Our Information Technology (IT) course will equip students with
+              the technical skills and knowledge they need to succeed in this
+              exciting profession. In order to equip students with the current
+              advancements in the field of IT and to avail of better job
+              prospects, the department also arranges for value added courses
+              and workshops. <br />The Department works on the co-curricular
+              aspects which organizes intercollegiate tech fest named as
+              “ITECHNOTHON” which includes events like Gaming, Quiz’s, Debates,
+              Various Competitions, etc. Students not only take part in academic
+              activities but are also actively involved in co-curricular
+              activities like NSS, Ananya, Kaleidoscope, College Day, Sports Day
+              and many more. Realizing that the industrial visit is considered
+              as one of the most strategic method of teaching, the department
+              has organized trips to places like Bangalore, Jaipur, Pune,
+              Silvasa etc. We also have well-equipped laboratories with high
+              configuration computers and 100 MBPS Internet connection.
+              Parent-teacher meetings are conducted regularly to discuss the
+              progress of the students.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="about-section">
+      <div class="container">
+        <div class="row">
+          <!-- Left Side: About Us Title -->
+          <div class="col-md-12">
+            <h2 class="title">Curriculum Design</h2>
+            <p class="about-description">
+              Autonomy reflects efforts for excellence in academic performances,
+              capability of self-governance and enhancement in the quality of
+              education. It gives us the freedom to frame our own syllabus based
+              on industrial needs. A Bachelor of Science in Information
+              Technology (B.Sc. IT), is a Bachelor's degree awarded for an
+              undergraduate program in the Information technology field. The
+              degree is normally required in order to work in the Information
+              technology industry. The B. Sc. IT degree program is of three
+              years duration. This degree is primarily focused on subjects such
+              as software, programming, databases, and networking. This degree
+              is awarded for completing a program of study in the field of
+              software development, software testing, software engineering, web
+              design, databases, programming, computer networking etc.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faculty-section">
+      <div class="container">
+        <h2 class="title">Faculty</h2>
+        <div class="row">
+          <!-- Card 1 -->
+          <div class="col-md-4">
+            <div class="team-card">
+              <img
+                src="./images/rinjal.jpg"
+                alt="Team Member 1"
+                class="team-image"
+              />
+              <h3 class="team-name">Mrs. Rinjal Jain BSc. (IT) Co-ordinator</h3>
+              <p class="team-role">M.Sc. (IT)</p>
+              <p class="team-description">
+                Teaching experience of 4 years in BSc (IT) and at undergraduate
+                level in several colleges.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-4">
+            <div class="team-card">
+              <img
+                src="./images/SinghSir.jpg"
+                alt="Team Member 2"
+                class="team-image"
+              />
+              <h3 class="team-name">Mr. Gauri Shankar Singh</h3>
+              <p class="team-role">MCA, MPhil</p>
+              <p class="team-description">
+                Teaching experience of 10 years in Information Technology (IT)
+                at Junior College Level and 6 years in BSc (IT).
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-4">
+            <div class="team-card">
+              <img
+                src="./images/VilasSir.jpg"
+                alt="Team Member 3"
+                class="team-image"
+              />
+              <h3 class="team-name">Mr. Vilas Rodrigues</h3>
+              <p class="team-role">MCA</p>
+              <p class="team-description">
+                Teaching experience of 12 years in Information Technology (IT)
+                at Junior College Level and 6 years in BSc (IT).
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="col-md-4">
+            <div class="team-card">
+              <img
+                src="./images/saqueba.jpg"
+                alt="Team Member 4"
+                class="team-image"
+              />
+              <h3 class="team-name">Ms. Saqueba Shaikh</h3>
+              <p class="team-role">Diploma (IT), B.E (Computer), M.Sc. (IT)</p>
+              <p class="team-description">
+                Teaching experience of 5 years in BSc (IT).
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="col-md-4">
+            <div class="team-card">
+              <img
+                src="./images/sidra.jpg"
+                alt="Team Member 5"
+                class="team-image"
+              />
+              <h3 class="team-name">Ms. Sidranaaz Qazi</h3>
+              <p class="team-role">M.Sc. (IT)</p>
+              <p class="team-description">
+                Teaching experience of 5 years at undergraduate level. Research
+                Projects- Dr. (Mrs.) Barbara Naidu Memorial Scholarship in
+                2017-18.
+              </p>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="col-md-4">
+            <div class="team-card">
+              <img
+                src="./images/ambreen.jpg"
+                alt="Team Member 6"
+                class="team-image"
+              />
+              <h3 class="team-name">Ms. Ambreen Shaikh</h3>
+              <p class="team-role">B.E (Computers), M.E (Computers)</p>
+              <p class="team-description">
+                Industry experience of 1.5 years and Teaching experience of 3.5
+                years in Engineering College and BSc (IT). Published Research
+                Papers in International Journal of Engineering Development and
+                Research.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer id="footer"></footer>
 
     <script>
-      fetch("/footer.html")
+      fetch("./footer.html")
         .then((response) => response.text())
         .then((html) => {
           document.getElementById("footer").innerHTML = html;
         });
     </script>
-<script>
-// Navbar smooth scrolling
-window.addEventListener("scroll", function () {
-    const navbars = document.querySelectorAll(".navbar");
-    navbars.forEach((navbar) => {
-      if (window.scrollY > 100) {
-        navbar.classList.add("opaque");
-        navbar.classList.add("small-logo");
-      } else {
-        navbar.classList.remove("opaque");
-        navbar.classList.remove("small-logo");
+    <script>
+      // Navbar smooth scrolling
+      window.addEventListener("scroll", function () {
+        const navbars = document.querySelectorAll(".navbar");
+        navbars.forEach((navbar) => {
+          if (window.scrollY > 100) {
+            navbar.classList.add("opaque");
+            navbar.classList.add("small-logo");
+          } else {
+            navbar.classList.remove("opaque");
+            navbar.classList.remove("small-logo");
+          }
+        });
+      });
+
+      // Sidebar toggle functions
+      function openSidebar() {
+        document.getElementById("sidebar").style.right = "0";
       }
-    });
-  });
-  
-  // Sidebar toggle functions
-  function openSidebar() {
-    document.getElementById("sidebar").style.right = "0";
-  }
-  
-  function closeSidebar() {
-    document.getElementById("sidebar").style.right = "-250px";
-  }
-  
-  // Handle dropdown functionality
-  var dropdownBtns = document.getElementsByClassName("dropdown-btn");
-  for (var i = 0; i < dropdownBtns.length; i++) {
-    dropdownBtns[i].addEventListener("click", function () {
-      this.classList.toggle("active");
-      var submenu = this.nextElementSibling;
-      if (submenu.style.display === "block") {
-        submenu.style.display = "none";
-      } else {
-        submenu.style.display = "block";
+
+      function closeSidebar() {
+        document.getElementById("sidebar").style.right = "-250px";
       }
-    });
-  }
-</script>
+
+      // Handle dropdown functionality
+      var dropdownBtns = document.getElementsByClassName("dropdown-btn");
+      for (var i = 0; i < dropdownBtns.length; i++) {
+        dropdownBtns[i].addEventListener("click", function () {
+          this.classList.toggle("active");
+          var submenu = this.nextElementSibling;
+          if (submenu.style.display === "block") {
+            submenu.style.display = "none";
+          } else {
+            submenu.style.display = "block";
+          }
+        });
+      }
+    </script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
