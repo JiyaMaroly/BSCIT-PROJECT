@@ -1,0 +1,44 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+  }
+
+  .header-section {
+    position: relative;
+    min-height: 100vh;
+    background: url("./images/sophiacollege.jpg") no-repeat center center;
+    background-size: cover;
+  }
+
+  .header-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1),
+      rgba(0, 0, 0, 0.4)
+    );
+    z-index: 0;
+  }
+
+  .overlay-text {
+    font-family: "DM Serif Text", serif;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 1;
+    font-weight: bold;
+  }
+
+  .content-section {
+    padding: 4rem 2rem;
+    background: #f8f9fa;
+  }

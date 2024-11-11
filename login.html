@@ -233,17 +233,48 @@
 
   .login-container {
     color: white;
-    
     font-family: "DM Serif Text", serif;
     position: absolute;
     top: 60%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 30%;
     background-color: rgba(0, 0, 0, 0.750);
     padding: 20px;
     border-radius: 10px;
+    align-content: center;
   }
+  /* For the largest screens */
+@media (min-width: 1200px) {
+  .login-container {
+    width: 30%;
+    margin: 0 auto;
+  }
+}
+
+/* For medium-large screens */
+@media (min-width: 992px) and (max-width: 1199px) {
+  .login-container {
+    width: 50%; /* Adjust as needed */
+    margin: 0 auto;
+  }
+}
+
+/* For medium screens */
+@media (min-width: 768px) and (max-width: 991px) {
+  .login-container {
+    width: 70%; /* Adjust as needed */
+    margin: 0 auto;
+  }
+}
+
+/* For small screens */
+@media (max-width: 767px) {
+  .login-container {
+    width: 90%; /* Full width on small screens */
+    margin: 0 auto;
+  }
+}
+
 
   .login-form {
     flex: 1;
@@ -256,10 +287,17 @@
   }
 
   .btn-primary {
+    
     background-color: rgb(45, 45, 45);
     border-color: #000;
   }
+  .btn-secondary{
+    background-color: white;
+  }
 
+  .btn-secondary:hover{
+    background-color: white;
+  }
   .btn-primary:hover {
     background-color: #444;
     border-color: #444;
@@ -384,14 +422,28 @@
         <h2 class="text-center mb-4">Login</h2> <!-- Login text above the form -->
         <form>
           <div class="mb-3">
-            <label for="email" class="form-label">Email</label>
             <input type="email" class="form-control" id="email" placeholder="Enter your email" />
           </div>
-          <div class="mb-3">
-            <label for="password" class="form-label">Password</label>
-            <input type="password" class="form-control" id="password" placeholder="Enter your password" />
+          <div class="mb-3 position-relative">
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              placeholder="Enter your password"
+            />
+            <button
+              type="button"
+              class="btn btn-secondary position-absolute end-0 top-50 translate-middle-y"
+              style="height: 100%;"
+              onclick="togglePassword()"
+            >
+              <i id="toggleIcon" class="fas fa-eye" style="color: #444;"></i>
+            </button>
           </div>
-          <button type="submit" class="btn btn-primary">Login</button>
+          
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary">Login</button>
+          </div>
         </form>
       </div>
     </div>
@@ -424,6 +476,8 @@
         document.getElementById("sidebar").style.right = "-250px";
       }
 
+      </script>
+<script>
       // Handle the dropdown functionality for submenus
       var dropdownBtns = document.getElementsByClassName("dropdown-btn");
       for (var i = 0; i < dropdownBtns.length; i++) {
@@ -438,6 +492,24 @@
         });
       }
     </script>
+
+<script>
+  function togglePassword() {
+    const passwordField = document.getElementById("password");
+    const toggleIcon = document.getElementById("toggleIcon");
+
+    if (passwordField.type === "password") {
+      passwordField.type = "text";
+      toggleIcon.classList.remove("fa-eye");
+      toggleIcon.classList.add("fa-eye-slash");
+    } else {
+      passwordField.type = "password";
+      toggleIcon.classList.remove("fa-eye-slash");
+      toggleIcon.classList.add("fa-eye");
+    }
+  }
+</script>
+
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
