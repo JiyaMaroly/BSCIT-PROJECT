@@ -461,6 +461,44 @@
             document.getElementById("footer").innerHTML = html;
           });
       </script>
+      <script>
+        // Navbar smooth scrolling
+        window.addEventListener("scroll", function () {
+          const navbars = document.querySelectorAll(".navbar");
+          navbars.forEach((navbar) => {
+            if (window.scrollY > 100) {
+              navbar.classList.add("opaque");
+              navbar.classList.add("small-logo");
+            } else {
+              navbar.classList.remove("opaque");
+              navbar.classList.remove("small-logo");
+            }
+          });
+        });
+  
+        // Sidebar toggle functions
+        function openSidebar() {
+          document.getElementById("sidebar").style.right = "0";
+        }
+  
+        function closeSidebar() {
+          document.getElementById("sidebar").style.right = "-250px";
+        }
+  
+        // Handle dropdown functionality
+        var dropdownBtns = document.getElementsByClassName("dropdown-btn");
+        for (var i = 0; i < dropdownBtns.length; i++) {
+          dropdownBtns[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var submenu = this.nextElementSibling;
+            if (submenu.style.display === "block") {
+              submenu.style.display = "none";
+            } else {
+              submenu.style.display = "block";
+            }
+          });
+        }
+      </script>
 
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
