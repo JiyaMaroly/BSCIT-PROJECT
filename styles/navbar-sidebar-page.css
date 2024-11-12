@@ -1,23 +1,15 @@
 .navbar {
-    position: fixed;
+    position: sticky;
     top: 0;
     width: 100%;
     z-index: 10;
     padding: 1rem;
     transition: background-color 0.3s ease;
-    background: transparent;
+    background-color: #333;
   }
 
-  .navbar.opaque {
-    background-color: rgba(0, 0, 0, 0.85);
-  }
 
   .navbar-brand img {
-    height: 150px;
-    transition: height 0.1s ease;
-  }
-
-  .navbar.small-logo .navbar-brand img {
     height: 100px;
   }
 
@@ -43,7 +35,7 @@
 
   /* Add arrow symbol next to dropdown menu items */
   .navbar .navbar-nav .dropdown-toggle::after {
-    font-family: "" DM Serif Text ", serif;";
+    font-family: "DM Serif Text, serif";
     padding-left: 5px; /* Space between text and arrow */
   }
   .nav-item.dropdown:hover .dropdown-menu {

@@ -7,7 +7,7 @@ body {
   .header-section {
     position: relative;
     min-height: 100vh;
-    background: url("./images/sophiacollege.jpg") no-repeat center center;
+    background: url("../images/sophiacollege.jpg") no-repeat center center;
     background-size: cover;
   }
 
@@ -88,7 +88,7 @@ body {
   
   @media (max-width: 480px) {
     .title {
-      font-size: 1.1rem;
+      font-size: 1.5rem;
     }
   
     .notice-list li {
@@ -143,10 +143,13 @@ body {
   }
   
   .team-name {
+    
+    font-family: "DM Serif Text", serif;
     font-size: 1.5rem;
-    font-weight: bold;
+    font-weight: 500;
     color: black;
     margin-bottom: 0.5rem;
+    
   }
   
   .team-role {
