@@ -1,0 +1,179 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+
+.heading{
+    font-family: "Playfair Display";
+    font-weight: 600;
+    font-size: 2.5rem;
+}
+
+/* Header Section */
+.header-section {
+    position: relative;
+    min-height: 100vh;
+    background: url("../itechnothon/2023-24/header.png") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay-text {
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    max-width: 80%;
+    width: 100%;
+}
+
+.content {
+    display: flex;
+    align-items: center;
+    gap: 100px;
+    width: 100%;
+}
+
+.navbar-brand img {
+    height: 100px;
+  }
+
+/* Logo Styling */
+.logo img {
+    max-width: 500px;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Theme Description Styling */
+.theme{
+    margin-top: 50px;
+}
+.theme-description {
+    text-align: left;
+    max-width: 600px;
+} 
+
+.theme-description p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .theme{
+        margin-top: 10px;
+    }
+    .content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .logo img {
+        padding-top: 100px;
+        min-width: 300px;
+    }
+
+    .theme-description {
+        text-align: center;
+        
+    }
+}
+
+/* Styling for Button Cards */
+
+.row {
+    display: flex;     /* Add spacing around the entire row */
+}
+
+.btn-card {
+    display: block;
+    background: linear-gradient(45deg, black, rgb(43, 1, 70));
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 20px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-card-prev {
+    display: block;
+    background: black;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    padding: 20px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+.btn-card-prev:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.btn-content {
+    font-weight: bold;
+}
+
+.title {
+    text-align: center;
+    font-family: "DM Serif Text", serif;
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 10px;
+  }
+
+
+/* Container Row */
+.rowgallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Create three equal columns */
+.column {
+    flex: 33.33%; /* Each column takes 1/3rd of the row */
+    max-width: 33.33%;
+    padding: 8px; /* Equal spacing around the columns */
+}
+
+/* Images in the columns */
+.column img {
+    vertical-align: middle;
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 5px; /* Optional: Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional: Shadow effect */
+}
+
+/* Responsive layout for two columns */
+@media screen and (max-width: 800px) {
+    .column {
+        flex: 50%;
+        max-width: 50%;
+    }
+}
+
+/* Responsive layout for single column */
+@media screen and (max-width: 600px) {
+    .column {
+        flex: 100%;
+        max-width: 100%;
+    }
+}
