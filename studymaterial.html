@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sophia College BSc IT</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/studymaterial.css" />
+    <link rel="stylesheet" href="./styles/navbar-sidebar-page.css" />
+    <link rel="stylesheet" href="./styles/footer.css" />
+  </head>
+  <body>
+    <!-- First Navbar (Large screens) -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
+      <div class="container-fluid">
+        <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
+          <a class="nav-link mx-3" href="index.html">Home</a>
+
+          <!-- Dropdown for Academics -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle mx-3"
+              href="#"
+              id="academicsDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Academics
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="academicsDropdown">
+              <li>
+                <a class="dropdown-item" href="./syllabi.html">Syllabi</a>
+              </li>
+              <li><a class="dropdown-item" href="#">Study Material</a></li>
+            </ul>
+          </li>
+
+          <a class="nav-link mx-3" href="#">Outreach Programs</a>
+        </div>
+
+        <a class="navbar-brand mx-auto" href="index.html">
+          <img src="./images/logo-white.png" alt="Logo" />
+        </a>
+
+        <div class="navbar-nav d-flex flex-row dm-serif-text-regular">
+          <!-- Dropdown for Student Life -->
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle mx-3"
+              href="#"
+              id="studentLifeDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Student Life
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="studentLifeDropdown">
+              <li><a class="dropdown-item" href="#">Industrial Visits</a></li>
+              <li><a class="dropdown-item" href="#">Activities</a></li>
+              <li><a class="dropdown-item" href="#">Alumni</a></li>
+            </ul>
+          </li>
+          <a class="nav-link mx-3" href="#">I-Technothon</a>
+          <a class="nav-link mx-3" href="#">Career</a>
+          <a class="nav-link login-item" href="login.html" title="Login"
+            ><i class="fas fa-user"></i
+          ></a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Second Navbar (Small screens) -->
+    <nav class="navbar navbar-expand-lg navbar-dark d-lg-none">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="./index.html">
+          <img src="./images/logo-white.png" alt="Logo" />
+        </a>
+        <button class="navbar-toggler" type="button" onclick="openSidebar()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeSidebar()"
+        >&times;</a
+      >
+      <a href="./index.html">Home</a>
+
+      <!-- Menu Item with Submenu -->
+      <div class="menu-item">
+        <button class="dropdown-btn">
+          Academics <i class="fas fa-caret-down"></i>
+        </button>
+        <div class="submenu">
+          <a href="./syllabi.html">Syllabi</a>
+          <a href="#">Study Material</a>
+        </div>
+      </div>
+      <a href="#">Outreach Programs</a>
+
+      <!-- Another Menu Item with Submenu -->
+      <div class="menu-item">
+        <button class="dropdown-btn">
+          Student Life<i class="fas fa-caret-down"></i>
+        </button>
+        <div class="submenu">
+          <a href="#">Industrial Visits</a>
+          <a href="#">Activities</a>
+          <a href="#">Alumni</a>
+        </div>
+      </div>
+
+      <a href="#">I-Technothon</a>
+      <a href="./login.html">Login <i class="fas fa-user"></i></a>
+    </div>
+
+    <section class="material">
+        <h2 class="title">E-Resources</h2>
+        <div class="material-container">
+            <!-- Column 1 -->
+             
+            <div class="material-columns">
+              
+        <h2 class="title">Semester 1</h2>
+              <!-- Semester 1 -->
+              <div class="material-column">
+                <div class="material-item">
+                  <h4>Programming in C</h4>
+                  <ul>
+                    <li><a href="https://www.geeksforgeeks.org/c-programming-language/">GeeksforGeeks</a></li>
+                    <li><a href="https://www.w3schools.com/c/">W3Schools</a></li>
+                    <li><a href="https://www.javatpoint.com/c-programming-language-tutorial">JavaTpoint</a></li>
+                  </ul>
+                </div>
+                <div class="material-item">
+                  <h3>Operating System</h3>
+                  <ul>
+                    <li><a href="https://www.geeksforgeeks.org/operating-systems/">GeeksforGeeks</a></li>
+                  </ul>
+                </div>
+                <div class="material-item">
+                  <h3>Indian Knowledge System</h3>
+                  <ul>
+                    <li><a href="https://history.computer.org/pubs/2012-12-rajaraman-india-computing-history.pdf">History of Indian Computing</a></li>
+                  </ul>
+                </div>
+                <div class="material-item">
+                  <h3>Digital Electronics</h3>
+                  <ul>
+                    <li><a href="https://de-iitr.vlabs.ac.in/List%20of%20experiments.html">IITR Virtual Labs</a></li>
+                  </ul>
+                </div>
+              </div>
+              <h2 class="title">Semester 2</h2>
+              <!-- Semester 2 -->
+              <div class="material-column">
+                <div class="material-item">
+                  <h3>Object Oriented Programming with C++</h3>
+                  <ul>
+                    <li><a href="https://www.w3schools.com/cpp/cpp_oop.asp">W3Schools</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/object-oriented-programming-in-cpp/">GeeksforGeeks</a></li>
+                    <li><a href="https://www.javatpoint.com/cpp-oops-concepts">JavaTpoint</a></li>
+                  </ul>
+                </div>
+                <div class="material-item">
+                  <h3>Numerical and Statistical Methods</h3>
+                  <ul>
+                    <li><a href="https://mpbou.edu.in/uploads/files/Numerical_Methods_Statistical_Analysis.pdf">PDF Resource</a></li>
+                  </ul>
+                </div>
+              </div>
+              <h2 class="title">Semester 3</h2>
+              <!-- Semester 3 -->
+              <div class="material-column">
+                <div class="material-item">
+                  <h3>Python Programming</h3>
+                  <ul>
+                    <li><a href="https://www.python.org/about/gettingstarted/">Python.org</a></li>
+                    <li><a href="https://www.w3schools.com/python/python_intro.asp">W3Schools</a></li>
+                    <li><a href="https://www.geeksforgeeks.org/python-programming-language-tutorial/">GeeksforGeeks</a></li>
+                  </ul>
+                </div>
+                <div class="material-item">
+                  <h3>Data Structures</h3>
+                  <ul>
+                    <li><a href="https://www.mta.ca/~rrosebru/oldcourse/263114/Dsa.pdf">PDF Resource</a></li>
+                  </ul>
+                </div>
+                <div class="material-item">
+                  <h3>Computer Networks</h3>
+                  <ul>
+                    <li><a href="https://www.accessengineeringlibrary.com/content/book/9780073250328/front-matter/preface1">AccessEngineering</a></li>
+                  </ul>
+                </div>
+                <div class="material-item">
+                  <h3>Digital Marketing</h3>
+                  <ul>
+                    <li><a href="https://onlinecourses.swayam2.ac.in/cec24_mg16/preview">Swayam Course</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+                <!-- Repeat for Title 8, 9, 10 -->
+            </div>
+        </div>
+    </section>
+    
+
+
+
+
+
+    <footer id="footer"></footer>
+
+    <script>
+      function openTab(evt, tabName) {
+        var i, tabcontent, tablinks;
+        tabcontent = document.getElementsByClassName("tab-pane");
+        for (i = 0; i < tabcontent.length; i++) {
+          tabcontent[i].classList.remove("active");
+        }
+        tablinks = document.getElementsByClassName("nav-link");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].classList.remove("active");
+        }
+        document.getElementById(tabName).classList.add("active");
+        evt.currentTarget.classList.add("active");
+      }
+    </script>
+    <script>
+        fetch("./footer.html")
+          .then((response) => response.text())
+          .then((html) => {
+            document.getElementById("footer").innerHTML = html;
+          });
+      </script>
+      <script>
+        // Navbar smooth scrolling
+        window.addEventListener("scroll", function () {
+          const navbars = document.querySelectorAll(".navbar");
+          navbars.forEach((navbar) => {
+            if (window.scrollY > 100) {
+              navbar.classList.add("opaque");
+              navbar.classList.add("small-logo");
+            } else {
+              navbar.classList.remove("opaque");
+              navbar.classList.remove("small-logo");
+            }
+          });
+        });
+  
+        // Sidebar toggle functions
+        function openSidebar() {
+          document.getElementById("sidebar").style.right = "0";
+        }
+  
+        function closeSidebar() {
+          document.getElementById("sidebar").style.right = "-250px";
+        }
+  
+        // Handle dropdown functionality
+        var dropdownBtns = document.getElementsByClassName("dropdown-btn");
+        for (var i = 0; i < dropdownBtns.length; i++) {
+          dropdownBtns[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var submenu = this.nextElementSibling;
+            if (submenu.style.display === "block") {
+              submenu.style.display = "none";
+            } else {
+              submenu.style.display = "block";
+            }
+          });
+        }
+      </script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+      integrity="sha384-oBqDVmMz4fnFO9gybF4k1Z5pCbD4j5lL4P0pM69vDTVwF5t/eN1h8yI0d6K9jMyC7"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-pzjw8f+ua7Kw1TIq0d4+2kWzpcReyT+e8xA1FPdqFyy5Kx79H4fa9u6yw4b5QxLf"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
