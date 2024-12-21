@@ -24,11 +24,7 @@
     <link rel="stylesheet" href="./styles/footer.css" />
   </head>
   <body>
-    <div id="inaugurationOverlay">
-      <h1>Department of BSc IT Website Inauguration</h1>
-      <button id="inaugurateButton">Inaugurate</button>
-    </div>
-    <div id="mainContent" class="blurred">
+    
       <!-- First Navbar (Large screens) -->
       <nav class="navbar navbar-expand-lg navbar-dark d-none d-lg-flex">
         <div class="container-fluid">
@@ -361,41 +357,7 @@
     <!-- Confetti Script -->
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
-    <script>
-      document
-        .getElementById("inaugurateButton")
-        .addEventListener("click", function () {
-          // Remove overlay
-          document.getElementById("inaugurationOverlay").style.display = "none";
-
-          // Unblur the main content
-          document.getElementById("mainContent").classList.remove("blurred");
-
-          // Trigger confetti
-          const duration = 2000; // Increased for better effect
-          const animationEnd = Date.now() + duration;
-
-          const confettiSettings = (originX) => ({
-            particleCount: Math.random() * 100 + 100, // Randomized particle count
-            spread: Math.random() * 100 + 150, // Randomized spread
-            startVelocity: Math.random() * 20 + 30, // Randomized velocity
-            origin: { x: originX, y: 0.9 },
-            ticks: Math.random() * 200 + 300, // Varying time for particles
-            drift: Math.random() * 0.5 - 0.25, // Drift for natural motion
-          });
-
-          const interval = setInterval(() => {
-            // Confetti from the left side
-            confetti(confettiSettings(0));
-            // Confetti from the right side
-            confetti(confettiSettings(1));
-
-            if (Date.now() > animationEnd) {
-              clearInterval(interval);
-            }
-          }, 150); // Slightly reduced interval for smoother effect
-        });
-    </script>
+    
 
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
