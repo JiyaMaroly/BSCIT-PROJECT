@@ -50,3 +50,13 @@ ul li a {
 ul li a:hover {
     color: #0056b3; /* Darker blue on hover */
 }
+
+/* Style for the list item */
+li.list-group-item {
+    position: relative;
+}
+
+.card-header {
+    background-color: #444;
+    font-size: 1.5rem; /* Adjust the font size as per your preference */
+  }
